@@ -1,9 +1,6 @@
-# 🎓 DULMS Auto-Tracker Bot 🚀
+# 🎓 DULMS Auto-Tracker Bot 🤖
 
-![Python](https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python&logoColor=white)
-![Selenium](https://img.shields.io/badge/Selenium-Web_Scraping-43B02A?style=for-the-badge&logo=selenium&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/Automated_by-GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
-![Open Source](https://img.shields.io/badge/Open_Source-100%25-success?style=for-the-badge)
+![DULMS](https://img.shields.io/badge/Platform-DULMS-blue) ![Python](https://img.shields.io/badge/Python-3.10-yellow) ![Selenium](https://img.shields.io/badge/Selenium-Web_Scraping-green)
 
 أداة برمجية ذكية ومفتوحة المصدر، مصممة خصيصاً لطلاب **جامعة الدلتا للعلوم والتكنولوجيا (Delta University)**. 
 تعمل الأداة كمساعد شخصي آلي (Bot) يقوم بمراقبة حسابك الجامعي على منصة DULMS على مدار الساعة، ويرسل لك إشعارات فورية على Telegram فور حدوث أي تحديث جديد.
@@ -19,55 +16,46 @@
   * نوع الغياب (محاضرة نظري 📚 أم سكشن عملي 🔬).
   * نسبة الغياب الحالية مقارنة بالحد الأقصى.
 * **⚡ أتمتة كاملة (100% Automated):** تعمل الأداة في الخلفية (Cloud) كل 4 ساعات عبر خوادم GitHub، ولا تحتاج لتشغيل جهازك أو فتح المتصفح.
+---
+
+## 🔒 الخصوصية والأمان (مهم جداً)
+هذه الأداة تعمل على حسابك الشخصي في GitHub (عن طريق خاصية Fork). 
+**لا أحد يستطيع رؤية بياناتك (الرقم الجامعي أو كلمة المرور)**. يتم حفظها في قبو مشفر (Secrets) خاص بك فقط، وتعمل الأداة بشكل مستقل تماماً على خوادم GitHub المجانية.
 
 ---
 
-## 🔒 الأمان والخصوصية (Privacy & Security)
+## 🚀 كيفية التشغيل (خطوات تُعمل لمرة واحدة فقط)
 
-**أمان بياناتك هو الأولوية القصوى.**
-تم تصميم هذه الأداة لتعمل بشكل "لامركزي". أنت تقوم بنسخ الكود إلى حسابك الشخصي على GitHub، وتعمل الأداة على خوادمك الخاصة. 
-* يتم حفظ الرقم الجامعي وكلمة المرور في **قبو مشفر (GitHub Secrets)**.
-* المطور أو أي شخص آخر **لا يملك أي صلاحية** للوصول إلى بياناتك أو رسائلك.
+### الخطوة الأولى: إنشاء بوت تليجرام الخاص بك
+1. ابحث في تليجرام عن البوت `@BotFather` وأرسل له أمر `/newbot`.
+2. اختر اسماً للبوت، وسيرسل لك كود طويل يسمى **(Token)**. احتفظ به.
+3. ابحث عن البوت الذي أنشأته للتو، وأرسل له `/start`.
+4. ابحث في تليجرام عن البوت `@User_iinfobot` وأرسل له أي رسالة، سيعطيك رقم الـ **(Id)** الخاص بك. احتفظ به أيضاً.
 
----
+### الخطوة الثانية: نسخ المشروع (Fork)
+1. قم بإنشاء حساب مجاني على [GitHub](https://github.com/).
+2. في أعلى يمين هذه الصفحة، اضغط على زر **Fork** ثم **Create fork** لنسخ المشروع إلى حسابك.
 
-## ⚙️ دليل التشغيل (Setup Guide)
+### الخطوة الثالثة: تفعيل صلاحيات الحفظ (مهم لعمل أداة الغياب)
+1. في نسختك من المشروع، اذهب إلى **Settings** ⚙️.
+2. من القائمة اليسرى، اختر **Actions** ثم **General**.
+3. انزل لأسفل حتى تجد قسم **Workflow permissions**، اختر **Read and write permissions** واضغط **Save**.
 
-لست بحاجة لخبرة برمجية لتشغيل الأداة! فقط اتبع هذه الخطوات التي ستنفذها **لمرة واحدة فقط**:
+### الخطوة الرابعة: إضافة بياناتك السرية (Secrets)
+1. من **Settings** ⚙️، اختر **Secrets and variables** ثم **Actions**.
+2. اضغط على الزر الأخضر **New repository secret** وأضف الـ 4 بيانات التالية تباعاً:
+   * **الاسم:** `STUDENT_ID` | **القيمة:** رقمك الجامعي.
+   * **الاسم:** `STUDENT_PASS` | **القيمة:** كلمة المرور الخاصة بالمنصة.
+   * **الاسم:** `BOT_TOKEN` | **القيمة:** الـ Token الذي أخذته من BotFather.
+   * **الاسم:** `CHAT_ID` | **القيمة:** الـ Id الذي أخذته من User_iinfobot.
 
-### 1️⃣ إعداد بوت تليجرام (Telegram Setup)
-1. افتح تطبيق Telegram وابحث عن البوت `@BotFather` وأرسل له أمر `/newbot`.
-2. اختر اسماً للبوت، وسيرسل لك كود مرور (Token) طويل. **(انسخه واحتفظ به)**.
-3. ابحث عن اسم البوت الذي أنشأته للتو، وأرسل له أمر `/start` لتفعيل المحادثة.
-4. ابحث في Telegram عن البوت `@userinfobot` وأرسل له أي رسالة، سيعطيك رقم المعرف الخاص بك (ID). **(انسخه واحتفظ به)**.
+### الخطوة الخامسة: التشغيل لأول مرة
+1. اذهب إلى تبويب **Actions** في الأعلى.
+2. اضغط على **I understand my workflows, go ahead and enable them**.
+3. من القائمة اليسرى، اختر `DULMS Auto Tracker`.
+4. اضغط على **Run workflow** ثم الزر الأخضر.
 
-### 2️⃣ استنساخ المشروع (Forking the Repository)
-1. قم بتسجيل الدخول إلى حسابك المجاني في [GitHub](https://github.com).
-2. في أعلى يمين هذه الصفحة، اضغط على زر **Fork** ثم **Create fork** لإنشاء نسخة خاصة بك من المشروع.
-
-### 3️⃣ ضبط صلاحيات الذاكرة (Workflow Permissions)
-*هذه الخطوة هامة جداً لكي تتذكر الأداة الغياب القديم ولا ترسل لك إشعارات متكررة.*
-1. داخل نسختك من المشروع، اذهب إلى الإعدادات **Settings** ⚙️.
-2. من القائمة الجانبية، اختر **Actions** ثم **General**.
-3. انزل لأسفل إلى قسم **Workflow permissions**، اختر **Read and write permissions** واضغط على زر الحفظ **Save**.
-
-### 4️⃣ إضافة بياناتك للـقبو السري (GitHub Secrets)
-1. من نافذة الإعدادات **Settings** ⚙️، اختر **Secrets and variables** ثم **Actions**.
-2. اضغط على الزر الأخضر **New repository secret** وقم بإضافة البيانات الأربعة التالية (واحدًا تلو الآخر):
-   * `STUDENT_ID` : اكتب رقمك الجامعي.
-   * `STUDENT_PASS` : اكتب كلمة المرور الخاصة بمنصة DULMS.
-   * `BOT_TOKEN` : اكتب التوكن الخاص ببوت تليجرام (من الخطوة 1).
-   * `CHAT_ID` : اكتب معرف تليجرام الخاص بك (من الخطوة 1).
-
-### 5️⃣ إطلاق الأداة (First Run)
-1. اذهب إلى تبويب **Actions** في أعلى صفحة المستودع.
-2. اضغط على الزر الأخضر **I understand my workflows, go ahead and enable them**.
-3. من القائمة الجانبية اليسرى، اختر `DULMS Auto Tracker`.
-4. على اليمين، اضغط على **Run workflow** ثم الزر الأخضر الداخلي لتشغيل الأداة لأول مرة.
-
-🎉 **انتهينا!** ستصلك الآن أول رسالة تقرير على Telegram، وستستمر الأداة بمراقبة المنصة تلقائياً من أجلك.
-
----
+🎉 **تم بنجاح!** الأداة تعمل الآن وسترسل لك تقريراً فورياً على تليجرام، وستستمر بالعمل تلقائياً في الخلفية
 
 ### 👨‍💻 التطوير (Developed By)
-تم التطوير بواسطة **Zeyad Mohamed Said Elfaramawy** *AI Engineering Student @ Delta University* *📧 للتواصل أو الإبلاغ عن مشكلة، يمكنك فتح `Issue` في المستودع.*
+تم التطوير بواسطة **Zeyad Mohamed Said Elfaramawy** *AI Engineering Student @ Delta University* * للتواصل أو الإبلاغ عن مشكلة، يمكنك فتح `Issue` في المستودع.*.
