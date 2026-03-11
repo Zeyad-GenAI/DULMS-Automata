@@ -8,7 +8,7 @@
 2. نزول **اختبارات (Quizzes)** جديدة.
 3. تسجيل **غياب (Absence)** جديد في أي مادة (محاضرة أو سكشن).
 
-> **💡 تطوير:** Zeyad Mohamed Said Elfaramawy (Zizo)
+> **💡 تطوير:** Zeyad Mohamed Said Elfaramawy
 
 ---
 
