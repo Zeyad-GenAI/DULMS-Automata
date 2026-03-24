@@ -2,8 +2,8 @@ name: DULMS Auto Tracker
 
 on:
   schedule:
-    - cron: '0 */4 * * *' # يشتغل كل 4 ساعات
-  workflow_dispatch:
+    - cron: '0 */4 * * *' 
+  workflow_dispatch: 
 
 jobs:
   run-tracker:
@@ -23,7 +23,7 @@ jobs:
     - name: Install dependencies
       run: pip install -r requirements.txt
 
-    - name: Run Tracker Script
+    - name: Run Master Script
       env:
         STUDENT_ID: ${{ secrets.STUDENT_ID }}
         STUDENT_PASS: ${{ secrets.STUDENT_PASS }}
@@ -31,9 +31,9 @@ jobs:
         CHAT_ID: ${{ secrets.CHAT_ID }}
       run: python main.py
 
-    - name: Save Absence Memory
+    - name: Save Memory Files
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add absence_data.json
-        git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update absence memory" && git push)
+        git add announcements_data.json absence_data.json || true
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update memory files" && git push)
