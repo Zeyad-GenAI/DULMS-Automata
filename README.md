@@ -2,7 +2,7 @@
 
 ![DULMS](https://img.shields.io/badge/Platform-DULMS-blue) ![Python](https://img.shields.io/badge/Python-3.10-yellow) ![Selenium](https://img.shields.io/badge/Selenium-Web_Scraping-green)
 
-أداة أوتوماتيكية ذكية ومفتوحة المصدر، مصممة خصيصاً لطلاب **جامعة الدلتا للعلوم والتكنولوجيا (Delta University)**. 
+أداة أوتوميشن ذكية ومفتوحة المصدر، مصممة خصيصاً لطلاب **جامعة الدلتا للعلوم والتكنولوجيا (Delta University)**. 
 تعمل الأداة كمساعد شخصي آلي (Bot) يراقب حسابك الجامعي على منصة DULMS على مدار الساعة، ويرسل لك تقريراً مجمعاً وفورياً على Telegram كل 4 ساعات عشان متفوتش أي حاجة!
 
 ---
